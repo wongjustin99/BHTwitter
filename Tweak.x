@@ -556,7 +556,8 @@ static void batchSwizzlingOnClass(Class cls, NSArray<NSString*>*origSelectors, I
     if (@available(iOS 14, *)) {
       videoPicker.mediaTypes = @[(NSString *)UTTypeMovie.identifier]; // leak spaghetti
     } else {
-      videoPicker.mediaTypes = @[(NSString *)kUTTypeMovie]; // dog mess
+      //videoPicker.mediaTypes = @[(NSString *)kUTTypeMovie]; // dog mess
+      videoPicker.mediaTypes = @[(NSString *)UTTypeMovie.identifier]; // leak spaghetti
     }
     videoPicker.delegate = self;
     
